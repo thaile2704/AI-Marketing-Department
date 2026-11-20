@@ -538,3 +538,12 @@ The user works with Claude Code in the repository/Codespaces and runs workspace 
 
 ---
 End of consolidated project context.
+
+
+## Cross-department operating model — 2026-11-20
+
+The existing workflow is only a deterministic single-node planner. It does not yet implement department assignment, specialist execution, parallel work, collaboration handoffs, department QA, or integrated delivery. Treat these as planned capabilities, not existing features.
+
+The authoritative target specification is [docs/CROSS_DEPARTMENT_WORKFLOW.md](CROSS_DEPARTMENT_WORKFLOW.md). Read it before designing workflow code. It defines the full operating lifecycle, RACI, department collaboration matrix, program/workstream/task/artifact contracts, durable events, task state machines, PostgreSQL-backed scheduling, LangGraph fan-out/fan-in, bounded concurrency/retry/recovery, collaboration requests, escalation, QA/revision loops, human approvals, separate execution, dashboards, roadmap, and acceptance criteria.
+
+Key constraints: keep LangGraph as the only orchestrator and PostgreSQL as the system of record and initial durable queue/control plane; use one shared profile-driven runtime, not 56 microservices; Department Heads own workstreams and specialist delegation; Director owns integrated coordination and cross-department conflict resolution; agents collaborate through typed requests, durable events, and versioned artifact references; dispatch only independent ready tasks and enforce hard dependencies; persist dispatch intent and use leases, heartbeats, idempotency, bounded retries/concurrency/cost; keep planning, approval, and external execution separate. This is target design only; no code implementation or tests are implied by documentation updates.
