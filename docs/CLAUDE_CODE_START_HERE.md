@@ -31,3 +31,7 @@ Do not change architecture, create placeholder agents, enable external actions, 
 
 ## Implementation protocol
 After the user approves a milestone, implement only that slice, add tests, run exact commands, update relevant docs/ADRs, and report changed files plus test evidence. Do not claim tests passed unless actually executed.
+
+
+## Cross-department workflow (read before implementation)
+Read docs/CROSS_DEPARTMENT_WORKFLOW.md together with docs/PROJECT_CONTEXT_FOR_CLAUDE.md, docs/ARCHITECTURE.md, docs/AGENT_SPECIFICATION.md, and docs/IMPLEMENTATION_BACKLOG.md. The current workflow is a deterministic planner only. The new document is the target operating contract, not evidence that assignment, parallel execution, or collaboration already exists. Implement incrementally, preserve LangGraph as the sole orchestrator and PostgreSQL as system of record, and do not mark capabilities complete without tests against the acceptance criteria.
