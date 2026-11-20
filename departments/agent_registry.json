@@ -1,0 +1,852 @@
+{
+  "version": "1.0.0",
+  "count": 56,
+  "departments": {
+    "intelligence": {
+      "name": "Marketing Intelligence",
+      "head": "Marketing Intelligence Department Head",
+      "specialists": [
+        "Market Researcher",
+        "Competitor Analyst",
+        "Customer Insight Analyst",
+        "Industry Analyst",
+        "Data Researcher"
+      ]
+    },
+    "strategy": {
+      "name": "Marketing Strategy & Brand",
+      "head": "Marketing Strategy & Brand Department Head",
+      "specialists": [
+        "Marketing Strategist",
+        "Brand Strategist",
+        "STP Analyst",
+        "Product Marketing Manager",
+        "Pricing Strategist"
+      ]
+    },
+    "seo_sem": {
+      "name": "SEO & SEM",
+      "head": "SEO & SEM Department Head",
+      "specialists": [
+        "SEO Specialist",
+        "Keyword Researcher",
+        "Content SEO Specialist",
+        "PPC Specialist"
+      ]
+    },
+    "content_creative": {
+      "name": "Content & Creative",
+      "head": "Content & Creative Department Head",
+      "specialists": [
+        "Content Strategist",
+        "Copywriter",
+        "Content Writer",
+        "Creative Director",
+        "Graphic Design Agent",
+        "Video Producer"
+      ]
+    },
+    "social_influencer": {
+      "name": "Social Media & Influencer",
+      "head": "Social Media & Influencer Department Head",
+      "specialists": [
+        "Social Media Strategist",
+        "Facebook Specialist",
+        "TikTok Specialist",
+        "YouTube Specialist",
+        "Influencer Manager"
+      ]
+    },
+    "demand_generation": {
+      "name": "Demand Generation",
+      "head": "Demand Generation Department Head",
+      "specialists": [
+        "Growth Strategist",
+        "Campaign Manager",
+        "Performance Marketer",
+        "Lead Generation Specialist"
+      ]
+    },
+    "crm_lifecycle": {
+      "name": "CRM & Lifecycle",
+      "head": "CRM & Lifecycle Department Head",
+      "specialists": [
+        "CRM Strategist",
+        "Email Marketing Specialist",
+        "Retention Specialist",
+        "Loyalty Manager"
+      ]
+    },
+    "ecommerce_conversion": {
+      "name": "E-commerce & Conversion",
+      "head": "E-commerce & Conversion Department Head",
+      "specialists": [
+        "E-commerce Manager",
+        "Marketplace Specialist",
+        "CRO Specialist",
+        "Sales Funnel Specialist"
+      ]
+    },
+    "analytics_bi": {
+      "name": "Analytics & Business Intelligence",
+      "head": "Analytics & Business Intelligence Department Head",
+      "specialists": [
+        "Marketing Analyst",
+        "Attribution Analyst",
+        "Financial Analyst",
+        "Business Intelligence Analyst"
+      ]
+    },
+    "marketing_operations": {
+      "name": "Marketing Operations",
+      "head": "Marketing Operations Department Head",
+      "specialists": [
+        "Marketing Operations Manager",
+        "Project Manager",
+        "Quality Assurance Agent",
+        "Marketing Documentation Agent"
+      ]
+    }
+  },
+  "agents": [
+    {
+      "id": "marketing_director",
+      "name": "AI Marketing Director",
+      "department": "executive",
+      "role": "Central orchestration, task decomposition, routing and executive reporting",
+      "tier": "director",
+      "default_model_tier": "reasoning",
+      "permissions": [
+        "read:all_scoped_data",
+        "create:tasks",
+        "delegate:tasks",
+        "request:approval"
+      ]
+    },
+    {
+      "id": "intelligence_head",
+      "name": "Marketing Intelligence Department Head",
+      "department": "intelligence",
+      "role": "Department planning, delegation, review and delivery ownership",
+      "tier": "department_head",
+      "default_model_tier": "reasoning",
+      "permissions": [
+        "read:department_data",
+        "create:tasks",
+        "delegate:department_tasks",
+        "request:approval"
+      ]
+    },
+    {
+      "id": "market_researcher",
+      "name": "Market Researcher",
+      "department": "intelligence",
+      "role": "Specialist execution for Market Researcher",
+      "tier": "specialist",
+      "default_model_tier": "balanced",
+      "permissions": [
+        "read:scoped_data",
+        "create:drafts",
+        "submit:review"
+      ]
+    },
+    {
+      "id": "competitor_analyst",
+      "name": "Competitor Analyst",
+      "department": "intelligence",
+      "role": "Specialist execution for Competitor Analyst",
+      "tier": "specialist",
+      "default_model_tier": "balanced",
+      "permissions": [
+        "read:scoped_data",
+        "create:drafts",
+        "submit:review"
+      ]
+    },
+    {
+      "id": "customer_insight_analyst",
+      "name": "Customer Insight Analyst",
+      "department": "intelligence",
+      "role": "Specialist execution for Customer Insight Analyst",
+      "tier": "specialist",
+      "default_model_tier": "balanced",
+      "permissions": [
+        "read:scoped_data",
+        "create:drafts",
+        "submit:review"
+      ]
+    },
+    {
+      "id": "industry_analyst",
+      "name": "Industry Analyst",
+      "department": "intelligence",
+      "role": "Specialist execution for Industry Analyst",
+      "tier": "specialist",
+      "default_model_tier": "balanced",
+      "permissions": [
+        "read:scoped_data",
+        "create:drafts",
+        "submit:review"
+      ]
+    },
+    {
+      "id": "data_researcher",
+      "name": "Data Researcher",
+      "department": "intelligence",
+      "role": "Specialist execution for Data Researcher",
+      "tier": "specialist",
+      "default_model_tier": "balanced",
+      "permissions": [
+        "read:scoped_data",
+        "create:drafts",
+        "submit:review"
+      ]
+    },
+    {
+      "id": "strategy_head",
+      "name": "Marketing Strategy & Brand Department Head",
+      "department": "strategy",
+      "role": "Department planning, delegation, review and delivery ownership",
+      "tier": "department_head",
+      "default_model_tier": "reasoning",
+      "permissions": [
+        "read:department_data",
+        "create:tasks",
+        "delegate:department_tasks",
+        "request:approval"
+      ]
+    },
+    {
+      "id": "marketing_strategist",
+      "name": "Marketing Strategist",
+      "department": "strategy",
+      "role": "Specialist execution for Marketing Strategist",
+      "tier": "specialist",
+      "default_model_tier": "balanced",
+      "permissions": [
+        "read:scoped_data",
+        "create:drafts",
+        "submit:review"
+      ]
+    },
+    {
+      "id": "brand_strategist",
+      "name": "Brand Strategist",
+      "department": "strategy",
+      "role": "Specialist execution for Brand Strategist",
+      "tier": "specialist",
+      "default_model_tier": "balanced",
+      "permissions": [
+        "read:scoped_data",
+        "create:drafts",
+        "submit:review"
+      ]
+    },
+    {
+      "id": "stp_analyst",
+      "name": "STP Analyst",
+      "department": "strategy",
+      "role": "Specialist execution for STP Analyst",
+      "tier": "specialist",
+      "default_model_tier": "balanced",
+      "permissions": [
+        "read:scoped_data",
+        "create:drafts",
+        "submit:review"
+      ]
+    },
+    {
+      "id": "product_marketing_manager",
+      "name": "Product Marketing Manager",
+      "department": "strategy",
+      "role": "Specialist execution for Product Marketing Manager",
+      "tier": "specialist",
+      "default_model_tier": "balanced",
+      "permissions": [
+        "read:scoped_data",
+        "create:drafts",
+        "submit:review"
+      ]
+    },
+    {
+      "id": "pricing_strategist",
+      "name": "Pricing Strategist",
+      "department": "strategy",
+      "role": "Specialist execution for Pricing Strategist",
+      "tier": "specialist",
+      "default_model_tier": "balanced",
+      "permissions": [
+        "read:scoped_data",
+        "create:drafts",
+        "submit:review"
+      ]
+    },
+    {
+      "id": "seo_sem_head",
+      "name": "SEO & SEM Department Head",
+      "department": "seo_sem",
+      "role": "Department planning, delegation, review and delivery ownership",
+      "tier": "department_head",
+      "default_model_tier": "reasoning",
+      "permissions": [
+        "read:department_data",
+        "create:tasks",
+        "delegate:department_tasks",
+        "request:approval"
+      ]
+    },
+    {
+      "id": "seo_specialist",
+      "name": "SEO Specialist",
+      "department": "seo_sem",
+      "role": "Specialist execution for SEO Specialist",
+      "tier": "specialist",
+      "default_model_tier": "balanced",
+      "permissions": [
+        "read:scoped_data",
+        "create:drafts",
+        "submit:review"
+      ]
+    },
+    {
+      "id": "keyword_researcher",
+      "name": "Keyword Researcher",
+      "department": "seo_sem",
+      "role": "Specialist execution for Keyword Researcher",
+      "tier": "specialist",
+      "default_model_tier": "balanced",
+      "permissions": [
+        "read:scoped_data",
+        "create:drafts",
+        "submit:review"
+      ]
+    },
+    {
+      "id": "content_seo_specialist",
+      "name": "Content SEO Specialist",
+      "department": "seo_sem",
+      "role": "Specialist execution for Content SEO Specialist",
+      "tier": "specialist",
+      "default_model_tier": "balanced",
+      "permissions": [
+        "read:scoped_data",
+        "create:drafts",
+        "submit:review"
+      ]
+    },
+    {
+      "id": "ppc_specialist",
+      "name": "PPC Specialist",
+      "department": "seo_sem",
+      "role": "Specialist execution for PPC Specialist",
+      "tier": "specialist",
+      "default_model_tier": "balanced",
+      "permissions": [
+        "read:scoped_data",
+        "create:drafts",
+        "submit:review"
+      ]
+    },
+    {
+      "id": "content_creative_head",
+      "name": "Content & Creative Department Head",
+      "department": "content_creative",
+      "role": "Department planning, delegation, review and delivery ownership",
+      "tier": "department_head",
+      "default_model_tier": "reasoning",
+      "permissions": [
+        "read:department_data",
+        "create:tasks",
+        "delegate:department_tasks",
+        "request:approval"
+      ]
+    },
+    {
+      "id": "content_strategist",
+      "name": "Content Strategist",
+      "department": "content_creative",
+      "role": "Specialist execution for Content Strategist",
+      "tier": "specialist",
+      "default_model_tier": "balanced",
+      "permissions": [
+        "read:scoped_data",
+        "create:drafts",
+        "submit:review"
+      ]
+    },
+    {
+      "id": "copywriter",
+      "name": "Copywriter",
+      "department": "content_creative",
+      "role": "Specialist execution for Copywriter",
+      "tier": "specialist",
+      "default_model_tier": "balanced",
+      "permissions": [
+        "read:scoped_data",
+        "create:drafts",
+        "submit:review"
+      ]
+    },
+    {
+      "id": "content_writer",
+      "name": "Content Writer",
+      "department": "content_creative",
+      "role": "Specialist execution for Content Writer",
+      "tier": "specialist",
+      "default_model_tier": "balanced",
+      "permissions": [
+        "read:scoped_data",
+        "create:drafts",
+        "submit:review"
+      ]
+    },
+    {
+      "id": "creative_director",
+      "name": "Creative Director",
+      "department": "content_creative",
+      "role": "Specialist execution for Creative Director",
+      "tier": "specialist",
+      "default_model_tier": "balanced",
+      "permissions": [
+        "read:scoped_data",
+        "create:drafts",
+        "submit:review"
+      ]
+    },
+    {
+      "id": "graphic_design_agent",
+      "name": "Graphic Design Agent",
+      "department": "content_creative",
+      "role": "Specialist execution for Graphic Design Agent",
+      "tier": "specialist",
+      "default_model_tier": "balanced",
+      "permissions": [
+        "read:scoped_data",
+        "create:drafts",
+        "submit:review"
+      ]
+    },
+    {
+      "id": "video_producer",
+      "name": "Video Producer",
+      "department": "content_creative",
+      "role": "Specialist execution for Video Producer",
+      "tier": "specialist",
+      "default_model_tier": "balanced",
+      "permissions": [
+        "read:scoped_data",
+        "create:drafts",
+        "submit:review"
+      ]
+    },
+    {
+      "id": "social_influencer_head",
+      "name": "Social Media & Influencer Department Head",
+      "department": "social_influencer",
+      "role": "Department planning, delegation, review and delivery ownership",
+      "tier": "department_head",
+      "default_model_tier": "reasoning",
+      "permissions": [
+        "read:department_data",
+        "create:tasks",
+        "delegate:department_tasks",
+        "request:approval"
+      ]
+    },
+    {
+      "id": "social_media_strategist",
+      "name": "Social Media Strategist",
+      "department": "social_influencer",
+      "role": "Specialist execution for Social Media Strategist",
+      "tier": "specialist",
+      "default_model_tier": "balanced",
+      "permissions": [
+        "read:scoped_data",
+        "create:drafts",
+        "submit:review"
+      ]
+    },
+    {
+      "id": "facebook_specialist",
+      "name": "Facebook Specialist",
+      "department": "social_influencer",
+      "role": "Specialist execution for Facebook Specialist",
+      "tier": "specialist",
+      "default_model_tier": "balanced",
+      "permissions": [
+        "read:scoped_data",
+        "create:drafts",
+        "submit:review"
+      ]
+    },
+    {
+      "id": "tiktok_specialist",
+      "name": "TikTok Specialist",
+      "department": "social_influencer",
+      "role": "Specialist execution for TikTok Specialist",
+      "tier": "specialist",
+      "default_model_tier": "balanced",
+      "permissions": [
+        "read:scoped_data",
+        "create:drafts",
+        "submit:review"
+      ]
+    },
+    {
+      "id": "youtube_specialist",
+      "name": "YouTube Specialist",
+      "department": "social_influencer",
+      "role": "Specialist execution for YouTube Specialist",
+      "tier": "specialist",
+      "default_model_tier": "balanced",
+      "permissions": [
+        "read:scoped_data",
+        "create:drafts",
+        "submit:review"
+      ]
+    },
+    {
+      "id": "influencer_manager",
+      "name": "Influencer Manager",
+      "department": "social_influencer",
+      "role": "Specialist execution for Influencer Manager",
+      "tier": "specialist",
+      "default_model_tier": "balanced",
+      "permissions": [
+        "read:scoped_data",
+        "create:drafts",
+        "submit:review"
+      ]
+    },
+    {
+      "id": "demand_generation_head",
+      "name": "Demand Generation Department Head",
+      "department": "demand_generation",
+      "role": "Department planning, delegation, review and delivery ownership",
+      "tier": "department_head",
+      "default_model_tier": "reasoning",
+      "permissions": [
+        "read:department_data",
+        "create:tasks",
+        "delegate:department_tasks",
+        "request:approval"
+      ]
+    },
+    {
+      "id": "growth_strategist",
+      "name": "Growth Strategist",
+      "department": "demand_generation",
+      "role": "Specialist execution for Growth Strategist",
+      "tier": "specialist",
+      "default_model_tier": "balanced",
+      "permissions": [
+        "read:scoped_data",
+        "create:drafts",
+        "submit:review"
+      ]
+    },
+    {
+      "id": "campaign_manager",
+      "name": "Campaign Manager",
+      "department": "demand_generation",
+      "role": "Specialist execution for Campaign Manager",
+      "tier": "specialist",
+      "default_model_tier": "balanced",
+      "permissions": [
+        "read:scoped_data",
+        "create:drafts",
+        "submit:review"
+      ]
+    },
+    {
+      "id": "performance_marketer",
+      "name": "Performance Marketer",
+      "department": "demand_generation",
+      "role": "Specialist execution for Performance Marketer",
+      "tier": "specialist",
+      "default_model_tier": "balanced",
+      "permissions": [
+        "read:scoped_data",
+        "create:drafts",
+        "submit:review"
+      ]
+    },
+    {
+      "id": "lead_generation_specialist",
+      "name": "Lead Generation Specialist",
+      "department": "demand_generation",
+      "role": "Specialist execution for Lead Generation Specialist",
+      "tier": "specialist",
+      "default_model_tier": "balanced",
+      "permissions": [
+        "read:scoped_data",
+        "create:drafts",
+        "submit:review"
+      ]
+    },
+    {
+      "id": "crm_lifecycle_head",
+      "name": "CRM & Lifecycle Department Head",
+      "department": "crm_lifecycle",
+      "role": "Department planning, delegation, review and delivery ownership",
+      "tier": "department_head",
+      "default_model_tier": "reasoning",
+      "permissions": [
+        "read:department_data",
+        "create:tasks",
+        "delegate:department_tasks",
+        "request:approval"
+      ]
+    },
+    {
+      "id": "crm_strategist",
+      "name": "CRM Strategist",
+      "department": "crm_lifecycle",
+      "role": "Specialist execution for CRM Strategist",
+      "tier": "specialist",
+      "default_model_tier": "balanced",
+      "permissions": [
+        "read:scoped_data",
+        "create:drafts",
+        "submit:review"
+      ]
+    },
+    {
+      "id": "email_marketing_specialist",
+      "name": "Email Marketing Specialist",
+      "department": "crm_lifecycle",
+      "role": "Specialist execution for Email Marketing Specialist",
+      "tier": "specialist",
+      "default_model_tier": "balanced",
+      "permissions": [
+        "read:scoped_data",
+        "create:drafts",
+        "submit:review"
+      ]
+    },
+    {
+      "id": "retention_specialist",
+      "name": "Retention Specialist",
+      "department": "crm_lifecycle",
+      "role": "Specialist execution for Retention Specialist",
+      "tier": "specialist",
+      "default_model_tier": "balanced",
+      "permissions": [
+        "read:scoped_data",
+        "create:drafts",
+        "submit:review"
+      ]
+    },
+    {
+      "id": "loyalty_manager",
+      "name": "Loyalty Manager",
+      "department": "crm_lifecycle",
+      "role": "Specialist execution for Loyalty Manager",
+      "tier": "specialist",
+      "default_model_tier": "balanced",
+      "permissions": [
+        "read:scoped_data",
+        "create:drafts",
+        "submit:review"
+      ]
+    },
+    {
+      "id": "ecommerce_conversion_head",
+      "name": "E-commerce & Conversion Department Head",
+      "department": "ecommerce_conversion",
+      "role": "Department planning, delegation, review and delivery ownership",
+      "tier": "department_head",
+      "default_model_tier": "reasoning",
+      "permissions": [
+        "read:department_data",
+        "create:tasks",
+        "delegate:department_tasks",
+        "request:approval"
+      ]
+    },
+    {
+      "id": "e_commerce_manager",
+      "name": "E-commerce Manager",
+      "department": "ecommerce_conversion",
+      "role": "Specialist execution for E-commerce Manager",
+      "tier": "specialist",
+      "default_model_tier": "balanced",
+      "permissions": [
+        "read:scoped_data",
+        "create:drafts",
+        "submit:review"
+      ]
+    },
+    {
+      "id": "marketplace_specialist",
+      "name": "Marketplace Specialist",
+      "department": "ecommerce_conversion",
+      "role": "Specialist execution for Marketplace Specialist",
+      "tier": "specialist",
+      "default_model_tier": "balanced",
+      "permissions": [
+        "read:scoped_data",
+        "create:drafts",
+        "submit:review"
+      ]
+    },
+    {
+      "id": "cro_specialist",
+      "name": "CRO Specialist",
+      "department": "ecommerce_conversion",
+      "role": "Specialist execution for CRO Specialist",
+      "tier": "specialist",
+      "default_model_tier": "balanced",
+      "permissions": [
+        "read:scoped_data",
+        "create:drafts",
+        "submit:review"
+      ]
+    },
+    {
+      "id": "sales_funnel_specialist",
+      "name": "Sales Funnel Specialist",
+      "department": "ecommerce_conversion",
+      "role": "Specialist execution for Sales Funnel Specialist",
+      "tier": "specialist",
+      "default_model_tier": "balanced",
+      "permissions": [
+        "read:scoped_data",
+        "create:drafts",
+        "submit:review"
+      ]
+    },
+    {
+      "id": "analytics_bi_head",
+      "name": "Analytics & Business Intelligence Department Head",
+      "department": "analytics_bi",
+      "role": "Department planning, delegation, review and delivery ownership",
+      "tier": "department_head",
+      "default_model_tier": "reasoning",
+      "permissions": [
+        "read:department_data",
+        "create:tasks",
+        "delegate:department_tasks",
+        "request:approval"
+      ]
+    },
+    {
+      "id": "marketing_analyst",
+      "name": "Marketing Analyst",
+      "department": "analytics_bi",
+      "role": "Specialist execution for Marketing Analyst",
+      "tier": "specialist",
+      "default_model_tier": "balanced",
+      "permissions": [
+        "read:scoped_data",
+        "create:drafts",
+        "submit:review"
+      ]
+    },
+    {
+      "id": "attribution_analyst",
+      "name": "Attribution Analyst",
+      "department": "analytics_bi",
+      "role": "Specialist execution for Attribution Analyst",
+      "tier": "specialist",
+      "default_model_tier": "balanced",
+      "permissions": [
+        "read:scoped_data",
+        "create:drafts",
+        "submit:review"
+      ]
+    },
+    {
+      "id": "financial_analyst",
+      "name": "Financial Analyst",
+      "department": "analytics_bi",
+      "role": "Specialist execution for Financial Analyst",
+      "tier": "specialist",
+      "default_model_tier": "balanced",
+      "permissions": [
+        "read:scoped_data",
+        "create:drafts",
+        "submit:review"
+      ]
+    },
+    {
+      "id": "business_intelligence_analyst",
+      "name": "Business Intelligence Analyst",
+      "department": "analytics_bi",
+      "role": "Specialist execution for Business Intelligence Analyst",
+      "tier": "specialist",
+      "default_model_tier": "balanced",
+      "permissions": [
+        "read:scoped_data",
+        "create:drafts",
+        "submit:review"
+      ]
+    },
+    {
+      "id": "marketing_operations_head",
+      "name": "Marketing Operations Department Head",
+      "department": "marketing_operations",
+      "role": "Department planning, delegation, review and delivery ownership",
+      "tier": "department_head",
+      "default_model_tier": "reasoning",
+      "permissions": [
+        "read:department_data",
+        "create:tasks",
+        "delegate:department_tasks",
+        "request:approval"
+      ]
+    },
+    {
+      "id": "marketing_operations_manager",
+      "name": "Marketing Operations Manager",
+      "department": "marketing_operations",
+      "role": "Specialist execution for Marketing Operations Manager",
+      "tier": "specialist",
+      "default_model_tier": "balanced",
+      "permissions": [
+        "read:scoped_data",
+        "create:drafts",
+        "submit:review"
+      ]
+    },
+    {
+      "id": "project_manager",
+      "name": "Project Manager",
+      "department": "marketing_operations",
+      "role": "Specialist execution for Project Manager",
+      "tier": "specialist",
+      "default_model_tier": "balanced",
+      "permissions": [
+        "read:scoped_data",
+        "create:drafts",
+        "submit:review"
+      ]
+    },
+    {
+      "id": "quality_assurance_agent",
+      "name": "Quality Assurance Agent",
+      "department": "marketing_operations",
+      "role": "Specialist execution for Quality Assurance Agent",
+      "tier": "specialist",
+      "default_model_tier": "balanced",
+      "permissions": [
+        "read:scoped_data",
+        "create:drafts",
+        "submit:review"
+      ]
+    },
+    {
+      "id": "marketing_documentation_agent",
+      "name": "Marketing Documentation Agent",
+      "department": "marketing_operations",
+      "role": "Specialist execution for Marketing Documentation Agent",
+      "tier": "specialist",
+      "default_model_tier": "balanced",
+      "permissions": [
+        "read:scoped_data",
+        "create:drafts",
+        "submit:review"
+      ]
+    }
+  ]
+}
