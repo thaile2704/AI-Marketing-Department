@@ -55,3 +55,7 @@ It does **not** yet provide complete multi-agent delegation, PostgreSQL RLS, ind
 8. Shared role runtime, not 56 services.
 9. Strict tenant/brand isolation.
 10. No silent architecture changes; document approved changes in ADRs.
+
+
+## Cross-department operating model
+The detailed target contract is in [CROSS_DEPARTMENT_WORKFLOW.md](CROSS_DEPARTMENT_WORKFLOW.md). LangGraph remains the sole orchestrator; PostgreSQL remains the system of record and initial durable scheduling/control plane. The target workflow uses versioned programs, workstreams, tasks, dependencies, artifacts, collaboration requests, events/outbox, bounded parallel dispatch, department QA, Director integration, independent QA, approval gates, separate execution, and outcome verification. Cross-agent communication is typed and persisted; unrestricted agent chat is not authoritative. This is planned architecture, not implemented functionality.
