@@ -26,7 +26,7 @@ Expected major versions: Node 22, Python 3.12.
 
 ```bash
 python -c "import socket; print('db resolves to', socket.gethostbyname('db'))"
-curl -fsS http://localhost:8000/health
+curl -fsS http://localhost:8000/api/v1/health
 ```
 
 Open forwarded port 3000 for the dashboard and port 8000 for the FastAPI service. PostgreSQL is an internal Compose service; use the API connection string rather than installing PostgreSQL tools in the workspace container.
