@@ -1,31 +1,31 @@
 # AI Marketing Department
 
-Hybrid multi-model, multi-company / multi-brand AI marketing platform. This repository is an **engineering MVP scaffold**, not a production-ready 56-agent autonomous service.
+Hybrid multi-model, multi-organization / multi-brand AI Marketing Operating System.
 
-## Architecture
-- FastAPI backend and PostgreSQL persistence
-- LangGraph workflow boundary for controlled task orchestration
-- OpenAI + Anthropic model gateway (provider selection by task tier)
-- Agent registry: 1 Director + 10 department heads + 45 specialists = 56 logical roles
-- Approval gates for externally visible or financially consequential actions
-- Next.js dashboard shell
-- n8n/MCP integration boundary (credentials and actual provider integrations are deployment-specific)
+> **Current status: engineering MVP/scaffold — not production-ready.** The repository contains a logical 56-role registry, but not 56 fully executable agents.
 
-## Quick start
-1. Copy `.env.example` to `.env`; add provider API keys.
-2. `docker compose up --build`
-3. API docs: http://localhost:8000/docs
-4. Web shell: http://localhost:3000
+## Product and architecture
+- 1 AI Marketing Director + 10 Department Heads + 45 Specialists = 56 logical roles.
+- FastAPI backend, PostgreSQL system of record, Next.js dashboard.
+- LangGraph is the only agent workflow orchestrator.
+- OpenAI + Anthropic through one model gateway.
+- n8n/MCP are integration boundaries, not replacements for backend authorization.
+- Human approval required for consequential external and financial actions.
+- Strict organization/brand isolation is a production requirement.
 
-The initial API persists tasks and approvals in PostgreSQL. LLM keys are optional for health checks and registry browsing; model-backed task execution requires a configured provider.
+## Documentation
+Start with **[`docs/PROJECT_CONTEXT_FOR_CLAUDE.md`](docs/PROJECT_CONTEXT_FOR_CLAUDE.md)** for the complete project handoff and Claude Code context.
 
-## Safety defaults
-- Draft/research actions may run autonomously.
-- Publishing, sending, ad spend changes, pricing changes, payments, deletion, and external customer communications require explicit approval and a separately configured integration.
-- No credentials are committed. No live external actions are enabled by default.
+Additional focused documents:
+- `docs/ARCHITECTURE.md` — approved technical architecture.
+- `docs/DECISIONS.md` — architecture decision records.
+- `docs/AGENT_SPECIFICATION.md` — role and executable-agent contract.
+- `docs/IMPLEMENTATION_BACKLOG.md` — phased implementation and acceptance gates.
+- `docs/SECURITY_RELEASE_GATES.md` — mandatory production security requirements.
+- `.claude/CLAUDE.md` — Claude Code engineering rules.
 
-## Claude Code
-Open this folder in Claude Code and follow `.claude/CLAUDE.md`. The implementation backlog is in `docs/IMPLEMENTATION_BACKLOG.md`. Treat `docs/ARCHITECTURE.md`, `docs/DECISIONS.md`, schemas and tests as source of truth. Do not silently change approved architecture.
+## Safety
+No production credentials or live external actions are enabled by default. Publishing, customer messaging, paid media changes, pricing, payments, deletion, and sensitive exports require explicit approval and a separately authorized executor.
 
-## Status
-Implemented scaffold: API, PostgreSQL models, registry, model gateway adapters, approval endpoints, task workflow boundary, dashboard shell, Docker setup and tests. Remaining production work is explicitly listed in the backlog.
+## Development
+See `docs/PROJECT_CONTEXT_FOR_CLAUDE.md` and `docs/CODESPACES.md` for environment setup and verification. Do not claim Codespaces or production readiness until actual runtime checks and CI pass.
