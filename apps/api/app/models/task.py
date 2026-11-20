@@ -1,6 +1,6 @@
 import uuid
 from datetime import datetime, timezone
-from sqlalchemy import String, Text, DateTime, JSON, ForeignKey
+from sqlalchemy import String, Text, DateTime, JSON, ForeignKey, Integer
 from sqlalchemy.orm import Mapped, mapped_column
 from app.db.base import Base
 class Task(Base):
@@ -11,7 +11,7 @@ class Task(Base):
     title: Mapped[str] = mapped_column(String(300))
     objective: Mapped[str] = mapped_column(Text)
     status: Mapped[str] = mapped_column(String(40), default="queued", index=True)
-    requested_by: Mapped[str] = mapped_column(String(100), default="ceo")
+    requested_by: Mapped[str] = mapped_column(String(200))
     assigned_agents: Mapped[list] = mapped_column(JSON, default=list)
     result: Mapped[dict | None] = mapped_column(JSON, nullable=True)
     created_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), default=lambda: datetime.now(timezone.utc))
@@ -19,11 +19,27 @@ class Approval(Base):
     __tablename__ = "approvals"
     id: Mapped[str] = mapped_column(String(36), primary_key=True, default=lambda: str(uuid.uuid4()))
     task_id: Mapped[str] = mapped_column(ForeignKey("tasks.id"), index=True)
+    organization_id: Mapped[str] = mapped_column(String(100), index=True)
     action_type: Mapped[str] = mapped_column(String(100))
     payload: Mapped[dict] = mapped_column(JSON)
+    payload_hash: Mapped[str] = mapped_column(String(64))
+    payload_version: Mapped[int] = mapped_column(Integer, default=1)
     status: Mapped[str] = mapped_column(String(30), default="pending", index=True)
-    requested_by: Mapped[str] = mapped_column(String(100))
-    decided_by: Mapped[str | None] = mapped_column(String(100), nullable=True)
+    requested_by: Mapped[str] = mapped_column(String(200))
+    decided_by: Mapped[str | None] = mapped_column(String(200), nullable=True)
     decision_note: Mapped[str | None] = mapped_column(Text, nullable=True)
     created_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), default=lambda: datetime.now(timezone.utc))
     decided_at: Mapped[datetime | None] = mapped_column(DateTime(timezone=True), nullable=True)
+    expires_at: Mapped[datetime | None] = mapped_column(DateTime(timezone=True), nullable=True)
+    consumed_at: Mapped[datetime | None] = mapped_column(DateTime(timezone=True), nullable=True)
+class AuditEvent(Base):
+    __tablename__ = "audit_events"
+    id: Mapped[str] = mapped_column(String(36), primary_key=True, default=lambda: str(uuid.uuid4()))
+    actor: Mapped[str] = mapped_column(String(200))
+    organization_id: Mapped[str] = mapped_column(String(100), index=True)
+    event_type: Mapped[str] = mapped_column(String(100))
+    resource_type: Mapped[str] = mapped_column(String(100))
+    resource_id: Mapped[str] = mapped_column(String(100))
+    outcome: Mapped[str] = mapped_column(String(40))
+    metadata_json: Mapped[dict] = mapped_column(JSON, default=dict)
+    created_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), default=lambda: datetime.now(timezone.utc))
