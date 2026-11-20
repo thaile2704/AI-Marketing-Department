@@ -4,15 +4,28 @@
   "service": "web",
   "workspaceFolder": "/workspaces/AI-Marketing-Department",
   "features": {
-    "ghcr.io/devcontainers/features/python:1": {
-      "version": "3.12"
+    "ghcr.io/devcontainers/features/node:1": {
+      "version": "22"
     }
   },
-  "forwardPorts": [3000, 8000, 5432],
+  "forwardPorts": [
+    3000,
+    8000,
+    5432
+  ],
   "portsAttributes": {
-    "3000": { "label": "Marketing Dashboard", "onAutoForward": "notify" },
-    "5432": { "label": "PostgreSQL", "onAutoForward": "silent" },
-    "8000": { "label": "FastAPI", "onAutoForward": "notify" }
+    "3000": {
+      "label": "Marketing Dashboard",
+      "onAutoForward": "notify"
+    },
+    "5432": {
+      "label": "PostgreSQL",
+      "onAutoForward": "silent"
+    },
+    "8000": {
+      "label": "FastAPI",
+      "onAutoForward": "notify"
+    }
   },
   "postCreateCommand": "python -m pip install -r apps/api/requirements.txt && cd apps/web && npm ci",
   "customizations": {
