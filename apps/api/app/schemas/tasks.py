@@ -4,12 +4,10 @@ class TaskCreate(BaseModel):
     brand_id: str = Field(min_length=1, max_length=100)
     title: str = Field(min_length=3, max_length=300)
     objective: str = Field(min_length=5)
-    requested_by: str = "ceo"
 class ApprovalCreate(BaseModel):
-    action_type: str
+    action_type: str = Field(min_length=2, max_length=100)
     payload: dict
-    requested_by: str = "marketing_director"
+    expires_in_minutes: int = Field(default=1440, ge=1, le=10080)
 class ApprovalDecision(BaseModel):
     decision: str = Field(pattern="^(approved|rejected|revision_requested)$")
-    decided_by: str
-    note: str | None = None
+    note: str | None = Field(default=None, max_length=2000)
