@@ -60,3 +60,5 @@ Every activated agent requires:
 
 ## Activation rule
 A registry entry is only a declared logical role. Mark an agent executable only after its profile, schemas, tool permissions, tests, evaluation threshold, observability, and bounded runtime are implemented. Keep registry count and executable count separate in APIs and dashboards.
+\n\n## Cross-department operating contract
+Department Heads are accountable workstream owners, not merely prompt wrappers. They accept or decline work, confirm capacity, decompose work, assign eligible specialists, review deliverables, issue typed collaboration requests, accept/reject handoffs, and escalate conflicts. Specialists receive bounded task envelopes and return schema-validated TaskResults with artifact references, evidence, assumptions, blockers, usage, and recommended next steps. The Director owns integrated program health, cross-department priority resolution, plan changes, consolidation, and escalation. Detailed RACI, handoff contracts, and lifecycle are in [CROSS_DEPARTMENT_WORKFLOW.md](CROSS_DEPARTMENT_WORKFLOW.md).
