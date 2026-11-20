@@ -1,0 +1,40 @@
+{
+  "name": "AI Marketing Department",
+  "dockerComposeFile": "../docker-compose.yml",
+  "service": "api",
+  "workspaceFolder": "/workspaces/AI-Marketing-Department",
+  "forwardPorts": [
+    3000,
+    8000,
+    5432
+  ],
+  "portsAttributes": {
+    "3000": {
+      "label": "Marketing Dashboard",
+      "onAutoForward": "notify"
+    },
+    "5432": {
+      "label": "PostgreSQL",
+      "onAutoForward": "silent"
+    },
+    "8000": {
+      "label": "FastAPI",
+      "onAutoForward": "notify"
+    }
+  },
+  "postCreateCommand": "python -m pip install -r apps/api/requirements.txt && cd apps/web && npm ci",
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "ms-python.python",
+        "ms-python.vscode-pylance",
+        "Anthropic.claude-code",
+        "dbaeumer.vscode-eslint"
+      ],
+      "settings": {
+        "python.defaultInterpreterPath": "/usr/local/bin/python",
+        "terminal.integrated.defaultProfile.linux": "bash"
+      }
+    }
+  }
+}
