@@ -97,3 +97,16 @@ This backlog distinguishes the existing scaffold from production gates. Do not m
 - Every agent task has bounded time, steps, tools, and cost.
 - Research claims have source provenance or are labeled as inference.
 - CI, migration, and Codespaces checks are green before release.
+\n\n## P1 — Cross-department workflow (new detailed scope)
+- [ ] Program brief, versioned program/workstream/task/artifact schemas and migrations.
+- [ ] Dependency DAG validation, cycle detection, hard/soft dependency semantics.
+- [ ] Department acceptance, capacity confirmation, specialist assignment, and accountable ownership.
+- [ ] PostgreSQL transactional outbox, durable scheduler, atomic task claim/lease, idempotency, and recovery.
+- [ ] LangGraph bounded fan-out/fan-in with persisted checkpoints and concurrency/cost limits.
+- [ ] Task lifecycle, collaboration request, escalation, artifact review, and event timeline APIs.
+- [ ] Department QA, revision loops, Director integration, independent QA, and conflict resolution.
+- [ ] Pause/resume/cancel, retry classification, partial failure, and human escalation.
+- [ ] Executive, Director, Department, Task, and Approval workspaces.
+- [ ] Tests for DAG ordering, parallelism, no premature dispatch, duplicate delivery, worker crash, cancellation, tenant/brand isolation, cost caps, and approval boundaries.
+- [ ] Do not mark workflow implemented until acceptance criteria in docs/CROSS_DEPARTMENT_WORKFLOW.md pass.
+
