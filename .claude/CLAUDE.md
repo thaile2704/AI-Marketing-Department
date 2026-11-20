@@ -35,3 +35,7 @@ You are the implementation engineer for AI Marketing Department. The consolidate
 
 ## First milestone
 Inspect and close remaining P0 gates from `docs/IMPLEMENTATION_BACKLOG.md`, especially Codespaces validation, PostgreSQL RLS, tenant-isolation tests, brand-level authorization, approval execution integrity, and complete audit coverage. Do not start live integrations or claim production readiness until release gates pass.
+
+
+## Workflow implementation guardrail
+Before changing orchestration, read docs/CROSS_DEPARTMENT_WORKFLOW.md. Current workflow is only a deterministic planner. Treat the cross-department workflow as target design until implemented and tested. Do not add a second orchestrator, 56 microservices, unrestricted agent chat, or unbounded parallelism. Keep durable task/event/artifact state in PostgreSQL, use LangGraph for orchestration, and preserve approval/execution separation. Implement one vertical slice at a time and update the backlog with verified status only.
