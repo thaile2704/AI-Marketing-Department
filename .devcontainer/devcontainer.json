@@ -1,7 +1,7 @@
 {
   "name": "AI Marketing Department",
   "dockerComposeFile": "../docker-compose.yml",
-  "service": "api",
+  "service": "web",
   "workspaceFolder": "/workspaces/AI-Marketing-Department",
   "features": {
     "ghcr.io/devcontainers/features/node:1": {
